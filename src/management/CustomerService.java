@@ -26,11 +26,8 @@ public class CustomerService implements IService<Customer> {
 
     @Override
     public void update(long id, Customer newObject) {
-        for (Customer customer:customers) {
-            if(customer.getId() == id) {
+        if(isExisted(id))
                 customers.set((int) (id-1), newObject);
-            }
-        }
     }
 
     @Override
